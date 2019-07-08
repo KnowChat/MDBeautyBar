@@ -11,7 +11,7 @@
 #import "KCBeautyBlurBar.h"
 #import "KCBeautySlideBar.h"
 #import "Masonry.h"
-
+#import "MDResourceAccess.h"
 @interface KCBeautyBar()
 @property (nonatomic, strong) UILabel *lblTitle;
 @property (nonatomic, strong) UIView *vwMenuBg;
@@ -89,8 +89,10 @@
     
     for (NSInteger i = 0; i < self.btnNormalImage.count; i++) {
         UIButton *btnFilter = [[UIButton alloc] init];
-        [btnFilter setImage:[UIImage imageNamed:self.btnNormalImage[i]] forState:UIControlStateNormal];
-        [btnFilter setImage:[UIImage imageNamed:self.btnSelectedImage[i]] forState:UIControlStateSelected];
+        
+        [btnFilter setImage:[MDResourceAccess image:self.btnNormalImage[i] bundleName:@"MDBeautyBar" moduleClass:self.class] forState:UIControlStateNormal];
+        
+        [btnFilter setImage:[MDResourceAccess image:self.btnSelectedImage[i] bundleName:@"MDBeautyBar" moduleClass:self.class] forState:UIControlStateSelected];
         btnFilter.tag = 100 + i;
         [_vwMenuBg addSubview:btnFilter];
         [btnFilter addTarget:self action:@selector(beautyEvent:) forControlEvents:UIControlEventTouchUpInside];
@@ -195,7 +197,7 @@
             make.left.right.equalTo(self);
             make.top.mas_equalTo(35);
             if (@available(iOS 11.0, *)) {
-                make.bottom.equalTo(self).offset(-40-UIApplication.sharedApplication.keyWindow.safeAreaInsets.bottom);
+                make.bottom.equalTo(self.mas_safeAreaLayoutGuideBottom).offset(-40);
             } else {
                 make.bottom.equalTo(self).offset(-40);
             }

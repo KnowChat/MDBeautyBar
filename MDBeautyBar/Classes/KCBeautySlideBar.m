@@ -7,7 +7,7 @@
 //
 
 #import "KCBeautySlideBar.h"
-
+#import "MDResourceAccess.h"
 @implementation KCBeautySlideBar
 - (instancetype)init {
     if (self = [super init]) {
@@ -18,11 +18,14 @@
 }
 
 - (void)loadUI {
-    [self setThumbImage:[UIImage imageNamed:@"beauty_slide"] forState:UIControlStateNormal];
+    
+    
+    [self setThumbImage:[MDResourceAccess image:@"beauty_slide" bundleName:@"MDBeautyBar" moduleClass:self.class] forState:UIControlStateNormal];
     [self setMinimumTrackTintColor:[UIColor colorWithRed:36 / 255.0 green:165 / 255.0 blue:229 / 255.0 alpha:1]];
     [self setMaximumTrackTintColor:[UIColor colorWithRed:216 / 255.0 green:216 / 255.0 blue:216 / 255.0 alpha:1]];
     
-    UIImage *bgImage = [UIImage imageNamed:@"beauty_prompt"];
+    
+    UIImage *bgImage = [MDResourceAccess image:@"beauty_prompt" bundleName:@"MDBeautyBar" moduleClass:self.class];
     _igwTipBg = [[UIImageView alloc] initWithImage:bgImage];
     _igwTipBg.frame = CGRectMake(0, -bgImage.size.height, bgImage.size.width, bgImage.size.height);
     [self addSubview:_igwTipBg];

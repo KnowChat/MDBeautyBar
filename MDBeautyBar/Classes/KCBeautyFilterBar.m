@@ -8,7 +8,7 @@
 
 #import "KCBeautyFilterBar.h"
 #import "Masonry.h"
-
+#import "MDResourceAccess.h"
 @implementation FilterData
 
 @end
@@ -81,7 +81,7 @@
 {
     FilterCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FilterCell" forIndexPath:indexPath];
     
-    cell.igwFilter.image = [UIImage imageNamed:_filtersDataSource[indexPath.row].filterBundleName];
+    cell.igwFilter.image = [MDResourceAccess image:_filtersDataSource[indexPath.row].filterBundleName bundleName:@"MDBeautyBar" moduleClass:self.class];
     cell.lblFilter.text = _filtersDataSource[indexPath.row].filterShowName;
     
     cell.igwFilter.layer.borderColor = [UIColor clearColor].CGColor;

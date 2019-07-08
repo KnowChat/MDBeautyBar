@@ -8,7 +8,7 @@
 
 #import "KCBeautyBlurBar.h"
 #import "Masonry.h"
-
+#import "MDResourceAccess.h"
 @implementation BlurCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -54,8 +54,9 @@
                   cancelImage:(UIImage *)cancelImage
                 selectedImage:(UIImage *)selectedImage {
     if (self = [super initWithFrame:frame collectionViewLayout:layout]) {
-        self.cancelImage = cancelImage == nil ? [UIImage imageNamed:@"beauty_cancel"] : cancelImage;
-        self.selectedImage = selectedImage == nil ? [UIImage imageNamed:@"beauty_selected"] : selectedImage;
+        
+        self.cancelImage = cancelImage == nil ? [MDResourceAccess image:@"beauty_cancel" bundleName:@"MDBeautyBar" moduleClass:self.class] : cancelImage;
+        self.selectedImage = selectedImage == nil ? [MDResourceAccess image:@"beauty_selected" bundleName:@"MDBeautyBar" moduleClass:self.class] : selectedImage;
         [self loadUI];
     }
     return self;

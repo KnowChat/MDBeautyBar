@@ -2,7 +2,7 @@
   "name": "MDBeautyBar",
   "version": "0.1.0",
   "summary": "MDBeautyBar 美颜界面",
-  "description": "美颜界面界面",
+  "description": "美颜界面界面 \"#import<MDBeautyBar/KCBeautyBar.h>\"",
   "homepage": "https://github.com/KnowChat/MDBeautyBar",
   "license": {
     "type": "MIT",
@@ -21,7 +21,7 @@
   "source_files": "MDBeautyBar/Classes/**/*",
   "resource_bundles": {
     "MDBeautyBar": [
-      "MDBeautyBar/Assets/**/*.png"
+      "MDBeautyBar/Assets/*.png"
     ]
   },
   "public_header_files": "MDBeautyBar/Classes/**/*.h",
