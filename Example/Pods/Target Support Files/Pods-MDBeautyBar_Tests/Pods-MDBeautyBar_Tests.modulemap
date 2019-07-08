@@ -1,0 +1,6 @@
+framework module Pods_MDBeautyBar_Tests {
+  umbrella header "Pods-MDBeautyBar_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

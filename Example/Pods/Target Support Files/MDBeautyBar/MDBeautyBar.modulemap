@@ -1,0 +1,6 @@
+framework module MDBeautyBar {
+  umbrella header "MDBeautyBar-umbrella.h"
+
+  export *
+  module * { export * }
+}

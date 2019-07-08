@@ -1,0 +1,33 @@
+{
+  "name": "MDBeautyBar",
+  "version": "0.1.0",
+  "summary": "MDBeautyBar 美颜界面",
+  "description": "美颜界面界面",
+  "homepage": "https://github.com/KnowChat/MDBeautyBar",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "yinhaofrancis": "183398721@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/KnowChat/MDBeautyBar.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "MDBeautyBar/Classes/**/*",
+  "resource_bundles": {
+    "MDBeautyBar": [
+      "MDBeautyBar/Assets/**/*.png"
+    ]
+  },
+  "public_header_files": "MDBeautyBar/Classes/**/*.h",
+  "dependencies": {
+    "Masonry": [
+      "~>1.1.0"
+    ]
+  }
+}
