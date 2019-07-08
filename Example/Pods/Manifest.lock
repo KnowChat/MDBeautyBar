@@ -1,6 +1,6 @@
 PODS:
   - Masonry (1.1.0)
-  - MDBeautyBar (0.1.0):
+  - MDBeautyBar (0.1.1):
     - Masonry (~> 1.1.0)
 
 DEPENDENCIES:
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MDBeautyBar: 2a3b077c7e06ed04a4423cc0625d54c7387d060d
+  MDBeautyBar: b63efc318d59b2ff295feff3317f15190c388a96
 
 PODFILE CHECKSUM: 55e24f0ad429a535b69f054c3991d02c355c1a29
 

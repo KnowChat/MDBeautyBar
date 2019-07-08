@@ -14,6 +14,7 @@
 #import "KCBeautyBlurBar.h"
 #import "KCBeautyFilterBar.h"
 #import "KCBeautySlideBar.h"
+#import "MDBeautyViewController.h"
 #import "MDResourceAccess.h"
 
 FOUNDATION_EXPORT double MDBeautyBarVersionNumber;

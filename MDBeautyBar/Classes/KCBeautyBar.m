@@ -73,7 +73,7 @@
         self.btnNormalImage = @[@"beauty_filters_n",
                                 @"beauty_blur_n",
                                 @"beauty_whitening_n",
-                                @"beauty_filters_n",
+                                @"red_smooth_n",
                                 @"beauty_face_n",
                                 @"beauty_eye_n"];
     }
@@ -82,7 +82,7 @@
         self.btnSelectedImage = @[@"beauty_filters_s",
                                   @"beauty_blur_s",
                                   @"beauty_whitening_s",
-                                  @"beauty_filters_s",
+                                  @"red_smooth_s",
                                   @"beauty_face_s",
                                   @"beauty_eye_s"];
     }
