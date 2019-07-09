@@ -353,7 +353,7 @@
 
 - (void)initEye:(float)eye {
     self.eyeSlide.value = eye;
-    self.thinSlide.hidden = YES;
+    self.eyeSlide.hidden = YES;
 }
 
 /*
