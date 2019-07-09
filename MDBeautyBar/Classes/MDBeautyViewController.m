@@ -17,6 +17,7 @@
     if (self) {
         self.transitioningDelegate = self;
         self.modalPresentationStyle = UIModalPresentationCustom;
+        self.bar = [[KCBeautyBar alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     }
     return self;
 }

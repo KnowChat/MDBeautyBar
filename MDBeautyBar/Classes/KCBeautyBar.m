@@ -99,9 +99,14 @@
         
         [btnFilter mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.vwMenuBg);
-            make.width.mas_equalTo(CGRectGetWidth(UIScreen.mainScreen.bounds) / 6.0);
+            make.width.equalTo(self.vwMenuBg).dividedBy(6);
             make.height.mas_equalTo(40);
-            make.left.mas_equalTo(i * CGRectGetWidth(UIScreen.mainScreen.bounds) / 6.0);
+            if(i == 0){
+                make.left.mas_equalTo(self.vwMenuBg);
+            }else{
+                make.left.equalTo([self.vwMenuBg viewWithTag:100 + i - 1].mas_right);
+            }
+            
         }];
     }
     
@@ -119,7 +124,8 @@
     [_vwMenuBg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self);
         if (@available(iOS 11.0, *)) {
-            make.height.mas_equalTo(40.f+UIApplication.sharedApplication.keyWindow.safeAreaInsets.bottom);
+//            make.height.mas_equalTo(40.f+UIApplication.sharedApplication.keyWindow.safeAreaInsets.bottom);
+            make.top.equalTo(self.mas_safeAreaLayoutGuideBottom).offset(-40);
         } else {
             make.height.mas_equalTo(40.f);
         }
