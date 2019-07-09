@@ -29,7 +29,6 @@
         make.edges.offset(0);
     }];
     [b addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    self.bar = [[KCBeautyBar alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     [self.view addSubview:self.bar];
     [self.bar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.offset(0);
