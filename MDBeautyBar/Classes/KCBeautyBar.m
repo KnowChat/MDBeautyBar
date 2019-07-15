@@ -27,6 +27,8 @@
 
 @property (nonatomic, copy) NSArray *btnNormalImage;
 @property (nonatomic, copy) NSArray *btnSelectedImage;
+@property (nonatomic, copy) NSArray *filterNames;
+@property (nonatomic, copy) NSArray *filterValue;
 @property (nonatomic, strong) UIImage *blurCancelImage;
 @property (nonatomic, strong) UIImage *blurSelectedImage;
 @end
@@ -42,6 +44,24 @@
         self.btnSelectedImage = selectedImages;
         self.blurCancelImage = blurCancelImage;
         self.blurSelectedImage = blurSelectedImage;
+        [self loadUI];
+    }
+    return self;
+}
+- (instancetype)initWithNormalImages:(NSArray *)normalImages
+                      selectedImages:(NSArray *)selectedImages
+                     blurCancelImage:(UIImage *)blurCancelImage
+                   blurSelectedImage:(UIImage *)blurSelectedImage
+                          filterName:(NSArray<NSString *> *)filterName
+                         filterValue:(NSArray<NSString *> *)filterValue{
+    if (self = [super init]) {
+        self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.7];
+        self.btnNormalImage = normalImages;
+        self.btnSelectedImage = selectedImages;
+        self.blurCancelImage = blurCancelImage;
+        self.blurSelectedImage = blurSelectedImage;
+        self.filterNames = filterName;
+        self.filterValue = filterValue;
         [self loadUI];
     }
     return self;
@@ -165,7 +185,7 @@
         self.currentView = self.redSlide;
         self.currentView.hidden = NO;
     }else if (i == 4) {
-        _lblTitle.text = @"廋脸";
+        _lblTitle.text = @"瘦脸";
         self.currentView.hidden = YES;
         self.currentView = self.thinSlide;
         self.currentView.hidden = NO;
@@ -191,6 +211,12 @@
         
         NSArray *aryBundleName = @[@"origin",@"red tea",@"pink",@"refreshing",@"delta",@"hongkong"];
         NSArray *aryShowName = @[@"自然",@"柔光",@"清新",@"冷调",@"温暖",@"日系"];
+        if (self.filterValue.count > 0){
+            aryBundleName = [self.filterValue copy];
+        }
+        if (self.filterNames.count > 0){
+            aryShowName = [self.filterNames copy];
+        }
         NSMutableArray *dataSource = @[].mutableCopy;
         for (NSInteger i = 0; i < aryBundleName.count; i++) {
             FilterData *data = [FilterData new];

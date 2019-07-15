@@ -46,6 +46,12 @@ typedef void(^EyeChangedBlock)(float value);
                      blurCancelImage:(UIImage *)blurCancelImage
                    blurSelectedImage:(UIImage *)blurSelectedImage;
 
+- (instancetype)initWithNormalImages:(NSArray *)normalImages
+                      selectedImages:(NSArray *)selectedImages
+                     blurCancelImage:(UIImage *)blurCancelImage
+                   blurSelectedImage:(UIImage *)blurSelectedImage
+                          filterName:(NSArray<NSString *>*)filterName
+                         filterValue:(NSArray<NSString *>*)filterValue;
 /**
  选中美颜选项
 

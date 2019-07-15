@@ -12,14 +12,19 @@
 @end
 
 @implementation MDBeautyViewController
-- (instancetype)init{
+
+- (instancetype)initWithFilter:(NSArray<NSString *> *)name WithValue:(NSArray<NSString *> *)value{
     self = [super init];
     if (self) {
         self.transitioningDelegate = self;
         self.modalPresentationStyle = UIModalPresentationCustom;
-        self.bar = [[KCBeautyBar alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        self.bar = [[KCBeautyBar alloc] initWithNormalImages:nil selectedImages:nil blurCancelImage:nil blurSelectedImage:nil filterName:name filterValue:value];
     }
     return self;
+}
+
+- (instancetype)init{
+    return [self initWithFilter:nil WithValue:nil];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
