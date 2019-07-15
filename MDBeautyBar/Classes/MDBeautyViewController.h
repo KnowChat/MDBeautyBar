@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MDBeautyViewController : UIViewController
 @property (nonnull, nonatomic) KCBeautyBar* bar;
-- (instancetype)initWithFilter:(NSArray<NSString *> *)name WithValue:(NSArray<NSString *> *)value;
+- (instancetype)initWithFilter:(nullable NSArray<NSString *> *)name WithValue:(nullable NSArray<NSString *> *)value;
 @end
 
 NS_ASSUME_NONNULL_END
