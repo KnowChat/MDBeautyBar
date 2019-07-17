@@ -9,10 +9,11 @@
 
 @implementation MDResourceAccess
 + (UIImage *)image:(NSString *)name bundleName:(NSString *)bundleName moduleClass:(Class)cls{
-    NSBundle *b = [NSBundle bundleWithPath:[[NSBundle bundleForClass:cls] pathForResource:bundleName ofType:@"bundle"]];
-    UIImage * img = [UIImage imageNamed:name inBundle:b compatibleWithTraitCollection:nil];
-    if(img == nil){
-        img = [UIImage imageNamed:name];
+    UIImage *img = [UIImage imageNamed:name];
+    if(!img){
+        NSBundle *b = [NSBundle bundleWithPath:[[NSBundle bundleForClass:cls] pathForResource:bundleName ofType:@"bundle"]];
+        UIImage * img = [UIImage imageNamed:name inBundle:b compatibleWithTraitCollection:nil];
+        return img;
     }
     return img;
 }

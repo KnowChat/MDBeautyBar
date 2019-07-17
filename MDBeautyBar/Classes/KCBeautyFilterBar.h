@@ -29,4 +29,5 @@ typedef void(^SelectedFilterBlock)(NSString *filter);
 
 @property (nonatomic, assign) NSInteger       selectedFilter;
 
+@property (nonatomic, strong) UIColor * selectColor;
 @end

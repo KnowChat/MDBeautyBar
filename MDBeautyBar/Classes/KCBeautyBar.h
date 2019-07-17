@@ -32,6 +32,8 @@ typedef void(^EyeChangedBlock)(float value);
 @property (nonatomic, copy) ThinChangedBlock thinBlock;
 @property (nonatomic, copy) EyeChangedBlock eyeBlock;
 
+@property (nonatomic, strong) UIColor * selectColor;
+
 /**
  初始化
 

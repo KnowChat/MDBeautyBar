@@ -208,7 +208,9 @@
         
         _filterBar = [[KCBeautyFilterBar alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
         [self addSubview:_filterBar];
-        
+        if(self.selectColor){
+            _filterBar.selectColor = self.selectColor;
+        }
         NSArray *aryBundleName = @[@"origin",@"red tea",@"pink",@"refreshing",@"delta",@"hongkong"];
         NSArray *aryShowName = @[@"自然",@"柔光",@"清新",@"冷调",@"温暖",@"日系"];
         if (self.filterValue.count > 0){

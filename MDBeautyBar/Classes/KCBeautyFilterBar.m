@@ -48,6 +48,7 @@
 @implementation KCBeautyFilterBar
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
     if (self = [super initWithFrame:frame collectionViewLayout:layout]) {
+        self.selectColor = [UIColor colorWithRed:197 / 255.0 green:193 / 255.0 blue:255 / 255.0 alpha:1];
         [self loadUI];
     }
     return self;
@@ -88,7 +89,8 @@
     cell.igwFilter.layer.borderWidth = 0.0;
     
     if (_selectedFilter == indexPath.row) {
-        cell.igwFilter.layer.borderColor = [UIColor colorWithRed:36 / 255.0 green:165 / 255.0 blue:229 / 255.0 alpha:1].CGColor;
+        
+        cell.igwFilter.layer.borderColor = self.selectColor.CGColor;
         cell.igwFilter.layer.borderWidth = 2.f;
     }
     
