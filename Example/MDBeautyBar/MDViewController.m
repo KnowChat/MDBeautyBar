@@ -46,8 +46,9 @@
                      @"lengsediao11",
                      @"nuansediao3"];
     NSArray *n = @[@"原图",@"粉嫩",@"清新",@"白亮",@"个性",@"黑白",@"冷色调",@"暖色调"];
-    
-    [self presentViewController:[[MDBeautyViewController alloc] initWithFilter:n WithValue:v] animated:true completion:nil];
+    MDBeautyViewController* vc = [[MDBeautyViewController alloc] initWithFilter:n WithValue:v];
+//    vc.bar.selectColor  = UIColor.redColor;
+    [self presentViewController:vc animated:true completion:nil];
 }
 
 @end
