@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MDBeautyBar'
-  s.version          = '0.1.7'
+  s.version          = '0.1.8'
   s.summary          = 'MDBeautyBar 美颜界面'
 
 # This description is used to generate tags and improve search results.
@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
   s.source_files = 'MDBeautyBar/Classes/**/*'
   
    s.resource_bundles = {
-     'MDBeautyBar' => ['MDBeautyBar/Assets/*.png']
+     'MDBeautyBar' => ['MDBeautyBar/Assets/*.*']
    }
 
    s.public_header_files = 'MDBeautyBar/Classes/**/*.h'
